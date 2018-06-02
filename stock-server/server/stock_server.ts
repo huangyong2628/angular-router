@@ -4,7 +4,7 @@ import * as path from 'path';
 
 const app = express();
 
-app.use('/', express.static(path.join(__dirname, '..', 'client')));
+// app.use('/', express.static(path.join(__dirname, '..', 'client')));
 
 app.get('/api/stock', (req, res) => {
     let result = stocks;

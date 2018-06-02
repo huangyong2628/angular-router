@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header">
+    <a class="btn btn-success btn-sm" (click)="create();">
+      <span class="fa fa-fw fa-plus-square-o"></span>创建
+    </a>
+    <input [formControl]="nameFilter" class="form-control" type="text" placeholder="Search" />
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th style="width: 10px">#</th>
+          <th>股票名称</th>
+          <th>股票价格</th>
+          <th>股票评级</th>
+          <th>操作</th>
+        </tr>
+        <tr *ngFor="let stock of stocks | async | stockFilter:'name':keyWord;let i = index;">
+          <td>{{i + 1}}</td>
+          <td>{{stock.name}}</td>
+          <td>{{stock.price}}</td>
+          <td><app-stars [roting]="stock.roting"></app-stars></td>
+          <td>
+            <a class="btn btn-warning btn-xs" (click)="update(stock);"><span class="fa fa-fw fa-pencil"></span>修改</a>
+            <a class="btn btn-danger btn-xs" (click)="delete(stock);"><span class="fa fa-fw fa-times"></span>删除</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+  <div class="card-footer clearfix">
+    <ul class="pagination pagination-sm m-0 float-right">
+      <li class="page-item"><a class="page-link" href="#">«</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">»</a></li>
+    </ul>
+  </div>
+</div>

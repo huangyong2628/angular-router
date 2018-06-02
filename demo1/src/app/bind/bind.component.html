@@ -1,0 +1,24 @@
+<p>
+  bind works!
+</p>
+<button (click)="doOnClick($event)">点我</button>
+<!-- DOM属性绑定 -->
+<input value="Tom" (input)="doOnInput($event)" />
+<table>
+  <tr>
+    <!-- HTML属性绑定 -->
+    <td [attr.colspan]="size">aaa</td>
+  </tr>
+</table>
+<div class="a b c">哈哈</div>
+<!-- css类绑定 -->
+<div class="a b" [class.c]="isBig">呵呵</div>
+<div [ngClass]="ngDivClass">啦啦</div>
+<!-- 样式绑定 -->
+<div [style.color]="isDev ? 'red' : 'blue'">咔咔</div>
+<div [style.font-size.px]="isDev ? 10 : 18">嘎嘎</div>
+<div [ngStyle]="ngStyle">呀呀</div>
+<!-- 数据双向绑定 -->
+<input [value]="inputValue1" (input)="doOnInput1($event)" />
+{{inputValue1}}
+<input [(ngModel)]="inputValue2" />

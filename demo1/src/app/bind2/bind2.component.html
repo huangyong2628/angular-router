@@ -1,0 +1,25 @@
+<p>
+  响应式编程Demo
+</p>
+<!-- 模板本地变量 #xxx
+<input #myField (keyup)="onKey(myField.value)" />
+-->
+<p>
+  <input [formControl]="searchInput" />
+</p>
+<p>
+  管道Demo
+</p>
+<p>
+  我的生日是{{ birthday | date: 'yyyy-MM-dd HH:mm:ss' }}
+</p>
+<p>
+  <!-- number: '2.1-4' 小数位最小1位，最大4位 -->
+  圆周率是{{ pi | number: '2.1-4' }}
+</p>
+<p>
+  自定义管道
+</p>
+<p>
+  {{ pi | number: '2.1' | multiple: '2'}}，{{ pi | number: '2.1-1' | multiple }}
+</p>
